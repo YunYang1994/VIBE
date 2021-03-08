@@ -145,18 +145,18 @@ def main(args):
         frames = dataset.frames
         has_keypoints = True if joints2d is not None else False
 
-        dataloader = DataLoader(dataset, batch_size=args.vibe_batch_size, num_workers=16)
+        # dataloader = DataLoader(dataset, batch_size=args.vibe_batch_size, num_workers=16)
 
         with torch.no_grad():
 
             pred_cam, pred_verts, pred_pose, pred_betas, pred_joints3d, smpl_joints2d, norm_joints2d = [], [], [], [], [], [], []
 
-            for batch in dataloader:
+            for batch in dataset:
                 if has_keypoints:
                     batch, nj2d = batch
                     norm_joints2d.append(nj2d.numpy().reshape(-1, 21, 3))
 
-                batch = batch.unsqueeze(0)
+                batch = batch.unsqueeze(0).unsqueeze(0)
                 batch = batch.to(device)
 
                 batch_size, seqlen = batch.shape[:2]
@@ -167,7 +167,7 @@ def main(args):
                 pred_pose.append(output['theta'][:,:,3:75].reshape(batch_size * seqlen, -1))
                 pred_betas.append(output['theta'][:, :,75:].reshape(batch_size * seqlen, -1))
                 pred_joints3d.append(output['kp_3d'].reshape(batch_size * seqlen, -1, 3))
-                smpl_joints2d.append(output['kp_2d']).reshape(batch_size * seqlen, -1, 2))
+                smpl_joints2d.append(output['kp_2d'].reshape(batch_size * seqlen, -1, 2))
 
 
             pred_cam = torch.cat(pred_cam, dim=0)
