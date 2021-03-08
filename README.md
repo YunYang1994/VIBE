@@ -113,6 +113,35 @@ python lib/utils/fbx_output.py \
     --person_id <tracklet id from VIBE output>
 
 ``` 
+
+### Ubuntu Installation Tutorial
+
+Building the Python 3.7.9 package from sources, and installing  `bpy` from wheel file:
+
+- python 3.7.9
+
+```
+$ sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus
+$ sudo apt-get install libncursesw5-dev libgdbm-dev libc6-dev
+$ sudo apt-get install zlib1g-dev libsqlite3-dev tk-dev
+$ sudo apt-get install libssl-dev openssl
+$ sudo apt-get install libffi-dev
+$ wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
+$ tar xzf Python-3.7.9.tgz && cd Python-3.7.9
+$ ./configure --with-ssl
+$ sudo make
+$ sudo make install
+$ sudo ln -s /usr/local/bin/python3.7 /usr/bin/python
+```
+
+- bpy
+
+```
+$ wget https://github.com/TylerGubala/blenderpy/releases/download/v2.91a0/bpy-2.91a0-cp37-cp37m-manylinux2014_x86_64.whl
+$ pip install bpy-2.91a0-cp37-cp37m-manylinux2014_x86_64.whl && bpy_post_install
+```
+
+
 ### Windows Installation Tutorial
 
 You can follow the instructions provided by [@carlosedubarreto](https://github.com/carlosedubarreto) to install and run VIBE on a Windows machine:
