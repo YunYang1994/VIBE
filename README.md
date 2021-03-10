@@ -134,13 +134,25 @@ $ sudo make install
 $ sudo ln -s /usr/local/bin/python3.7 /usr/bin/python
 ```
 
-- bpy
+- [bpy](https://github.com/TylerGubala/blenderpy)
 
 ```
 $ wget https://github.com/TylerGubala/blenderpy/releases/download/v2.91a0/bpy-2.91a0-cp37-cp37m-manylinux2014_x86_64.whl
 $ pip install bpy-2.91a0-cp37-cp37m-manylinux2014_x86_64.whl && bpy_post_install
 ```
 
+- [STAF](https://github.com/soulslicer/STAF/tree/staf)
+
+```
+$ git clone https://github.com/soulslicer/STAF.git
+$ cd STAF && git checkout staf
+$ git submodule update --init --recursive --remote
+$ cd models && bash getModels.sh
+$ cd ..
+$ mkdir build && cd build
+$ cmake ..
+$ make
+```
 
 ### Windows Installation Tutorial
 
