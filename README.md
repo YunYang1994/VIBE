@@ -20,32 +20,7 @@ Check our YouTube videos below for more details.
 [Michael J. Black](https://ps.is.tuebingen.mpg.de/person/black),        
 > *IEEE Computer Vision and Pattern Recognition, 2020* 
 
-## Features
 
-_**V**ideo **I**nference for **B**ody Pose and Shape **E**stimation_ (VIBE) is a video pose and shape estimation method.
-It predicts the parameters of SMPL body model for each frame of an input video. Pleaser refer to our [arXiv report](https://arxiv.org/abs/1912.05656) for further details.
-
-This implementation:
-
-- has the demo and training code for VIBE implemented purely in PyTorch,
-- can work on arbitrary videos with multiple people,
-- supports both CPU and GPU inference (though GPU is way faster),
-- is fast, up-to 30 FPS on a RTX2080Ti (see [this table](doc/demo.md#runtime-performance)),
-- achieves SOTA results on 3DPW and MPI-INF-3DHP datasets,
-- includes Temporal SMPLify implementation.
-- includes the training code and detailed instruction on how to train it from scratch.
-- can create an FBX/glTF output to be used with major graphics softwares.
-
-<p float="center">
-  <img src="doc/assets/method_1.gif" width="49%" />
-  <img src="doc/assets/parkour.gif" width="49%" />
-</p>
-
-## Updates
-
-- 05/01/2021: Windows installation tutorial is added thanks to amazing [@carlosedubarreto](https://github.com/carlosedubarreto)
-- 06/10/2020: Support OneEuroFilter smoothing.
-- 14/09/2020: FBX/glTF conversion script is released.
 
 ## Getting Started
 VIBE has been implemented and tested on Ubuntu 18.04 with python >= 3.7. It supports both GPU and CPU inference.
