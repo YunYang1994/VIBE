@@ -122,10 +122,8 @@ Building the Python 3.7.9 package from sources, and installing  `bpy` from wheel
 
 ```
 $ sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus
-$ sudo apt-get install libncursesw5-dev libgdbm-dev libc6-dev
-$ sudo apt-get install zlib1g-dev libsqlite3-dev tk-dev
-$ sudo apt-get install libssl-dev openssl
-$ sudo apt-get install libffi-dev
+$ sudo apt-get install libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev
+$ sudo apt-get install libssl-dev openssl libffi-dev
 $ wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
 $ tar xzf Python-3.7.9.tgz && cd Python-3.7.9
 $ ./configure --with-ssl
